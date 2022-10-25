@@ -1,11 +1,12 @@
 import { GoogleAuthProvider } from 'firebase/auth';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
 
+    const [error, setError] = useState('');
     const { providerLogin, signIn } = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation()
@@ -30,14 +31,20 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+
         signIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                setError('');
                 navigate(from, { replace: true })
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error)
+                setError(error.message);
+            })
+
     }
 
 
@@ -53,6 +60,8 @@ const Login = () => {
                                 className="img-fluid" alt="Phone image" />
                         </div>
                         <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+
+                            <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign In</p>
 
 
 
@@ -72,9 +81,10 @@ const Login = () => {
                                     Login
                                 </Button>
                                 <Form.Text className="text-danger">
-
+                                    {error}
                                 </Form.Text>
                             </Form>
+                            <p><small>New to this website? Please <Link to='/register'>Sign Up</Link></small></p>
                             <div>
 
                                 <button onClick={handleGoogleSignIn} className="btn btn-primary btn-lg btn-block" href="#!"
