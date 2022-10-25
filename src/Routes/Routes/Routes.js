@@ -1,11 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Blog from "../../Pages/Blog/Blog";
+import Courses from "../../Pages/Courses/Courses";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Asides from "../../Pages/Sheared/Sides/Asides";
+import Category from '../../Pages/Category/Category'
+
 
 export const routes = createBrowserRouter([
     {
@@ -17,6 +21,17 @@ export const routes = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>
 
+            },
+            {
+                path: '/courses',
+                element: <Courses></Courses>,
+                loader: () => fetch('http://localhost:5000/topic')
+
+            },
+            {
+                path: '/category/:id',
+                element: <Category></Category>,
+                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
             },
             {
                 path: '/login',

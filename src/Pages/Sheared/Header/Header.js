@@ -17,16 +17,16 @@ const Header = () => {
             .catch(error => console.error(error))
     }
     return (
-        <Navbar collapseOnSelect className='mb-4' expand="lg" bg="light" variant="light">
+        <Navbar collapseOnSelect className='mb-4 bg-secondary' expand="lg" bg="secondary" variant="light">
             <Container>
                 <Navbar.Brand><Link to='/' className='text-decoration-none'>
 
                     <div className='d-flex me-5' >
                         <div style={{ height: '30px' }}>
 
-                            <img src={LOGO} alt="" style={{ height: '60px' }} />
+                            <img className='rounded' src={LOGO} alt="" style={{ height: '60px' }} />
                         </div>
-                        <h1 className=''>Perfect <span>Learn</span></h1>
+                        <h1 className='ms-3'><span className='perfect'>Perfect</span> <span className='learn'>Learn</span></h1>
                     </div>
 
                 </Link></Navbar.Brand>
@@ -34,13 +34,25 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
 
-                        <Link to='/blog'>Blog</Link>
-                        <Link to='/blog'>Blog</Link>
-                        <Link to='/blog'>Blog</Link>
+                        <Link to='/courses' className='text-decoration-none me-4 fs-4 fw-semibold'>Courses</Link>
+                        <Link to='/blog' className='text-decoration-none me-4 fs-4 fw-semibold'>Blog</Link>
+                        <Link to='/blog' className='text-decoration-none fs-4 fw-semibold'>Blog</Link>
 
 
                     </Nav>
                     <Nav>
+
+                        <Link to="/">
+                            {user?.photoURL ?
+                                <Image
+                                    style={{ height: '30px' }}
+                                    roundedCircle
+                                    src={user?.photoURL}>
+                                </Image>
+                                : <FaUser className='me-4'></FaUser>
+                            }
+                        </Link>
+
                         <>
                             {
                                 user?.uid ?
@@ -50,23 +62,14 @@ const Header = () => {
                                     </>
                                     :
                                     <>
-                                        <Link to='/login'>Login</Link>
-                                        <Link to='/register'>Register</Link>
+
+                                        <Link to='/login' className='text-decoration-none me-4 fs-4 fw-semibold'><Button variant="outline-primary" className='fs-4 fw-semibold' >Login</Button></Link>
+                                        <Link to='/register' className='text-decoration-none  '><Button className='fw-semibold fs-4'>Register</Button></Link>
                                     </>
                             }
 
 
                         </>
-                        <Link to="/">
-                            {user?.photoURL ?
-                                <Image
-                                    style={{ height: '30px' }}
-                                    roundedCircle
-                                    src={user?.photoURL}>
-                                </Image>
-                                : <FaUser></FaUser>
-                            }
-                        </Link>
                     </Nav>
                     <div className='d-lg-none'>
 
