@@ -85,15 +85,9 @@ const Login = () => {
                                 </Form.Text>
                             </Form>
                             <p><small>New to this website? Please <Link to='/register'>Sign Up</Link></small></p>
-                            <div>
-
-                                <button onClick={handleGoogleSignIn} className="btn btn-primary btn-lg btn-block" href="#!"
-                                    role="button">
-                                    <i className="fab fa-facebook-f me-2"></i>Continue with Google
-                                </button>
-                                <button className="btn btn-primary btn-lg btn-block" href="#!"
-                                    role="button">
-                                    <i className="fab fa-twitter me-2"></i>Continue with Github</button>
+                            <div >
+                                <Button onClick={handleGoogleSignIn} variant="outline-primary" > Continue with Google</Button>
+                                <Button variant="outline-dark">Continue with Github</Button>
 
                             </div>
                         </div>

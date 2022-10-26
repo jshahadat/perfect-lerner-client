@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import './Header.css'
 import { Button, Container, Image } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -34,9 +35,9 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
 
-                        <Link to='/courses' className='text-decoration-none me-4 fs-4 fw-semibold'>Courses</Link>
-                        <Link to='/blog' className='text-decoration-none me-4 fs-4 fw-semibold'>FAQ</Link>
-                        <Link to='/blog' className='text-decoration-none fs-4 fw-semibold'>Blog</Link>
+                        <Link to='/courses' className='text-decoration-none me-4 fs-4 fw-semibold color'>Courses</Link>
+                        <Link to='/blog' className='text-decoration-none me-4 fs-4 fw-semibold color'>FAQ</Link>
+                        <Link to='/blog' className='text-decoration-none fs-4 fw-semibold color'>Blog</Link>
 
 
                     </Nav>
@@ -63,7 +64,7 @@ const Header = () => {
                                     :
                                     <>
 
-                                        <Link to='/login' className='text-decoration-none me-4 fs-4 fw-semibold'><Button variant="outline-primary" className='fs-4 fw-semibold' >Login</Button></Link>
+                                        <Link to='/login' className='text-decoration-none me-4 fs-4 fw-semibold'><Button variant="success" className='fs-4 fw-semibold' >Login</Button></Link>
                                         <Link to='/register' className='text-decoration-none  '><Button className='fw-semibold fs-4'>Register</Button></Link>
                                     </>
                             }

@@ -11,12 +11,8 @@ const Main = () => {
             <Header></Header>
 
             <Container>
-                <Col lg="4" className='d-none d-lg-block'>
 
-                </Col>
-                <Col lg="8">
-                    <Outlet></Outlet>
-                </Col>
+                <Outlet></Outlet>
             </Container>
         </div>
     );

@@ -10,16 +10,25 @@ const Courses = () => {
 
 
     return (
-        <Container>
-            <Asides></Asides>
-            <div>
-                {
-                    courses.map(topics => <TopicsCard
-                        key={topics._id}
-                        topics={topics}
-                    ></TopicsCard>)
-                }
-            </div>
+        <Container className='d-flex'>
+
+            <Col lg="4">
+
+                <Asides></Asides>
+            </Col>
+
+            <Col lg="8">
+
+                <div className=''>
+                    {
+                        courses.map(topics => <TopicsCard
+                            key={topics._id}
+                            topics={topics}
+                        ></TopicsCard>)
+                    }
+
+                </div>
+            </Col>
         </Container>
     );
 };

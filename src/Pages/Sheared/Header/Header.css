@@ -1,0 +1,15 @@
+.perfect {
+    color: fuchsia;
+}
+
+.learn {
+    color: chartreuse;
+}
+
+.color {
+    color: cornsilk;
+}
+
+.color:hover {
+    color: burlywood;
+}

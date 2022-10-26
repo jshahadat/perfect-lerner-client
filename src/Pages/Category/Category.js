@@ -8,11 +8,15 @@ const Category = () => {
 
 
     return (
-        <div>
-            <div>
+
+
+
+        <div className='d-flex container'>
+
+            <div className='col-4'>
                 <Asides></Asides>
             </div>
-            <div>
+            <div className='col-8'>
                 <h2>This is Category has news: {coursesTopic.length}</h2>
                 {
                     coursesTopic.map(topics => <TopicsCard
