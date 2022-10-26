@@ -8,15 +8,24 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import LOGO from '../../../assets/logo/logo.png'
 
+
+
+
+
+
+
+
 const Header = () => {
 
     const { user, logOut } = useContext(AuthContext);
+
 
     const handleLogOut = () => {
         logOut()
             .then(() => { })
             .catch(error => console.error(error))
     }
+
     return (
         <Navbar collapseOnSelect className='mb-4 bg-secondary pt-4' expand="lg" bg="secondary" variant="light">
             <Container>
@@ -73,9 +82,7 @@ const Header = () => {
 
                         </>
                     </Nav>
-                    <div>
 
-                    </div>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

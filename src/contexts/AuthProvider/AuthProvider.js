@@ -1,6 +1,11 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import app from '../../firebase/firebase.config'
+import './AuthProvider.css';
+import styled, { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme, GlobalStyles } from "../../Pages/Sheared/Theme/theme";
+
+
 
 export const AuthContext = createContext();
 
@@ -10,6 +15,7 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [theme, setTheme] = useState("light");
 
 
 
@@ -51,7 +57,11 @@ const AuthProvider = ({ children }) => {
 
     }, [])
 
-    const authInfo = { user, loading, createUser, providerLogin, signIn, updateUserProfile, logOut }
+
+
+
+
+    const authInfo = { theme, setTheme, user, loading, createUser, providerLogin, signIn, updateUserProfile, logOut }
 
     return (
         <AuthContext.Provider value={authInfo}>
