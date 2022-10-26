@@ -18,14 +18,14 @@ const Header = () => {
             .catch(error => console.error(error))
     }
     return (
-        <Navbar collapseOnSelect className='mb-4 bg-secondary' expand="lg" bg="secondary" variant="light">
+        <Navbar collapseOnSelect className='mb-4 bg-secondary pt-4' expand="lg" bg="secondary" variant="light">
             <Container>
                 <Navbar.Brand><Link to='/' className='text-decoration-none'>
 
-                    <div className='d-flex me-5' >
+                    <div className='d-flex mb-4' >
                         <div style={{ height: '30px' }}>
 
-                            <img className='rounded' src={LOGO} alt="" style={{ height: '60px' }} />
+                            <img className='rounded mb-2' src={LOGO} alt="" style={{ height: '60px' }} />
                         </div>
                         <h1 className='ms-3'><span className='perfect'>Perfect</span> <span className='learn'>Learn</span></h1>
                     </div>
@@ -35,9 +35,9 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
 
-                        <Link to='/courses' className='text-decoration-none me-4 fs-4 fw-semibold color'>Courses</Link>
-                        <Link to='/faq' className='text-decoration-none me-4 fs-4 fw-semibold color'>FAQ</Link>
-                        <Link to='/blog' className='text-decoration-none fs-4 fw-semibold color'>Blog</Link>
+                        <Link to='/courses' className='text-decoration-none ms-5 me-4 mb-4 fs-4 fw-semibold color'>Courses</Link>
+                        <Link to='/faq' className='text-decoration-none me-4 mb-4 fs-4 fw-semibold color'>FAQ</Link>
+                        <Link to='/blog' className='text-decoration-none fs-4 fw-semibold color mb-4'>Blog</Link>
 
 
                     </Nav>
@@ -46,12 +46,13 @@ const Header = () => {
                         <Link to="/">
                             {user?.photoURL ?
                                 <Image
+                                    className='me-5'
                                     title={user?.displayName}
                                     style={{ height: '40px' }}
                                     roundedCircle
                                     src={user?.photoURL}>
                                 </Image>
-                                : <FaUser style={{ height: '30px' }} title={user?.displayName} className='me-4'></FaUser>
+                                : <FaUser style={{ height: '30px' }} title={user?.displayName} className='me-4 mt-2 mb-4'></FaUser>
                             }
                         </Link>
 
@@ -59,22 +60,20 @@ const Header = () => {
                             {
                                 user?.uid ?
                                     <>
-                                        <span></span>
-                                        <Button onClick={handleLogOut} variant="light">Log out</Button>
+                                        <span className='me-4 mb-4'><Button onClick={handleLogOut} variant="light">Log out</Button></span>
                                     </>
                                     :
                                     <>
 
-                                        <Link to='/login' className='text-decoration-none me-4 fs-4 fw-semibold'><Button variant="success" className='fs-4 fw-semibold' >Login</Button></Link>
-                                        <Link to='/register' className='text-decoration-none  '><Button className='fw-semibold fs-4'>Register</Button></Link>
+                                        <Link to='/login' className='text-decoration-none fs-4 fw-semibold color me-5 mb-4'>Login</Link>
+                                        <Link to='/register' className='text-decoration-none  '><Button className='fw-semibold fs-4 me-4 mb-4'>Register</Button></Link>
                                     </>
                             }
 
 
                         </>
                     </Nav>
-                    <div className=''>
-
+                    <div>
 
                     </div>
                 </Navbar.Collapse>

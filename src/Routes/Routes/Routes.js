@@ -7,7 +7,6 @@ import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
-import Asides from "../../Pages/Sheared/Sides/Asides";
 import Category from '../../Pages/Category/Category'
 import Topic from "../../Pages/Sheared/Topic/Topic";
 

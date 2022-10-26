@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Image } from 'react-bootstrap';
