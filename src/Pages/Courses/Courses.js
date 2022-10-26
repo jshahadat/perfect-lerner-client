@@ -6,13 +6,19 @@ import TopicsCard from '../Sheared/TopicsCard/TopicsCard';
 
 const Courses = () => {
     const courses = useLoaderData();
+    console.log(courses);
 
 
     return (
         <Container>
             <Asides></Asides>
             <div>
-                All {courses.length}
+                {
+                    courses.map(topics => <TopicsCard
+                        key={topics._id}
+                        topics={topics}
+                    ></TopicsCard>)
+                }
             </div>
         </Container>
     );

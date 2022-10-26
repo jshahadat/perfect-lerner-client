@@ -35,7 +35,7 @@ const Header = () => {
                     <Nav className="me-auto">
 
                         <Link to='/courses' className='text-decoration-none me-4 fs-4 fw-semibold'>Courses</Link>
-                        <Link to='/blog' className='text-decoration-none me-4 fs-4 fw-semibold'>Blog</Link>
+                        <Link to='/blog' className='text-decoration-none me-4 fs-4 fw-semibold'>FAQ</Link>
                         <Link to='/blog' className='text-decoration-none fs-4 fw-semibold'>Blog</Link>
 
 

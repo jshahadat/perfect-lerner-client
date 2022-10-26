@@ -9,6 +9,7 @@ import Register from "../../Pages/Login/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Asides from "../../Pages/Sheared/Sides/Asides";
 import Category from '../../Pages/Category/Category'
+import Topic from "../../Pages/Sheared/Topic/Topic";
 
 
 export const routes = createBrowserRouter([
@@ -32,6 +33,12 @@ export const routes = createBrowserRouter([
                 path: '/category/:id',
                 element: <Category></Category>,
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+            },
+            {
+                path: '/topic/:id',
+                element: <Topic></Topic>,
+                loader: ({ params }) => fetch(`http://localhost:5000/topic/${params.id}`)
+
             },
             {
                 path: '/login',
