@@ -10,13 +10,13 @@ const Courses = () => {
 
 
     return (
-        <Container className='flex-lg-row bg-dark pb-5'>
+        <Container className='d-lg-flex bg-dark pb-5'>
 
             <Col lg="4">
                 <Asides></Asides>
             </Col>
 
-            <Col lg="8">
+            <Col lg="8 container">
                 <div>
                     {
                         courses.map(topics => <TopicsCard

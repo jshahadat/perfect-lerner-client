@@ -11,11 +11,11 @@ const Category = () => {
 
 
 
-        <div className=' '>
-            <div className='col-4'>
+        <div className='d-lg-flex bg-dark pb-5 '>
+            <div className='col-lg-4'>
                 <Asides></Asides>
             </div>
-            <div className='col-8'>
+            <div className='col-lg-8 container'>
                 <h2>This is Category has news: {coursesTopic.length}</h2>
                 {
                     coursesTopic.map(topics => <TopicsCard
@@ -24,7 +24,8 @@ const Category = () => {
                     ></TopicsCard>)
                 }
             </div>
-        </div>
+
+        </div >
     );
 };
 

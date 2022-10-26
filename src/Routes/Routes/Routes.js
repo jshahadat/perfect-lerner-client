@@ -12,6 +12,7 @@ import Category from '../../Pages/Category/Category'
 import Topic from "../../Pages/Sheared/Topic/Topic";
 
 
+
 export const routes = createBrowserRouter([
     {
         path: '/',
@@ -36,7 +37,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/topic/:id',
-                element: <Topic></Topic>,
+                element: <PrivateRoute><Topic></Topic></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/topic/${params.id}`)
 
             },
@@ -51,7 +52,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/blog',
-                element: <PrivateRoute><Blog></Blog></PrivateRoute>
+                element: <Blog></Blog>
             }
         ]
     }

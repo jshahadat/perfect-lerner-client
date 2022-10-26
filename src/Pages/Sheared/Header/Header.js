@@ -36,7 +36,7 @@ const Header = () => {
                     <Nav className="me-auto">
 
                         <Link to='/courses' className='text-decoration-none me-4 fs-4 fw-semibold color'>Courses</Link>
-                        <Link to='/blog' className='text-decoration-none me-4 fs-4 fw-semibold color'>FAQ</Link>
+                        <Link to='/faq' className='text-decoration-none me-4 fs-4 fw-semibold color'>FAQ</Link>
                         <Link to='/blog' className='text-decoration-none fs-4 fw-semibold color'>Blog</Link>
 
 
@@ -46,7 +46,8 @@ const Header = () => {
                         <Link to="/">
                             {user?.photoURL ?
                                 <Image
-                                    style={{ height: '30px' }}
+                                    title={user?.displayName}
+                                    style={{ height: '40px' }}
                                     roundedCircle
                                     src={user?.photoURL}>
                                 </Image>
@@ -72,7 +73,8 @@ const Header = () => {
 
                         </>
                     </Nav>
-                    <div className='d-lg-none'>
+                    <div className=''>
+
 
                     </div>
                 </Navbar.Collapse>
