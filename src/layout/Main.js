@@ -7,11 +7,10 @@ import Asides from "../Pages/Sheared/Sides/Asides";
 
 const Main = () => {
     return (
-        <div>
+        <div className='bg-dark'>
             <Header></Header>
 
             <Container>
-
                 <Outlet></Outlet>
             </Container>
         </div>

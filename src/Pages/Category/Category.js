@@ -11,8 +11,7 @@ const Category = () => {
 
 
 
-        <div className='d-flex container'>
-
+        <div className=' '>
             <div className='col-4'>
                 <Asides></Asides>
             </div>
