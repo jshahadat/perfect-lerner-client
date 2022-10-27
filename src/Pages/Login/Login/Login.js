@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -16,7 +16,8 @@ const Login = () => {
 
     const from = location.state?.from?.pathname || '/';
 
-    const googleProvider = new GoogleAuthProvider()
+    const googleProvider = new GoogleAuthProvider();
+    const gitHubProvider = new GithubAuthProvider();
 
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
@@ -26,6 +27,19 @@ const Login = () => {
 
             })
             .catch(error => console.error(error))
+    }
+
+
+
+    const handleGitHubSignIn = () => {
+        signInWithPopup(gitHubProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+
+            })
+            .catch(error => console.error(error))
+
     }
 
     const handleSubmit = (event) => {
@@ -159,7 +173,7 @@ const Login = () => {
 
                                         <div >
                                             <Button onClick={handleGoogleSignIn} variant="outline-primary" > Continue with Google</Button>
-                                            <Button variant="outline-dark">Continue with Github</Button>
+                                            <Button onClick={handleGitHubSignIn} variant="outline-dark">Continue with Github</Button>
 
                                         </div>
                                     </div>
