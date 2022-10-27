@@ -5,10 +5,10 @@ import Header from '../Pages/Sheared/Header/Header';
 
 const Main = () => {
     return (
-        <div className='bg-dark pb-5'>
+        <div className='bg-dark'>
             <Header></Header>
 
-            <Container className='pb-5'>
+            <Container>
                 <Outlet></Outlet>
             </Container>
         </div>

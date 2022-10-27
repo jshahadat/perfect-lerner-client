@@ -6,10 +6,7 @@ import TopicsCard from '../Sheared/TopicsCard/TopicsCard';
 const Category = () => {
     const coursesTopic = useLoaderData();
 
-
     return (
-
-
 
         <div className='d-lg-flex bg-dark pb-5 '>
             <div className='col-lg-4'>

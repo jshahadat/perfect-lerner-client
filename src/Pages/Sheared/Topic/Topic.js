@@ -27,7 +27,7 @@ const Topic = () => {
         <div >
             <div>
                 <Pdf targetRef={ref} filename="Course-Details.pdf" options={options}>
-                    {({ toPdf }) => <Button onClick={toPdf} className='mb-4 p-2 ps-5 pe-5 fs-4 fw-semibold color ' variant="outline-success" >Download Course Details</Button>}
+                    {({ toPdf }) => <Button onClick={toPdf} className='mb-4 p-2 ps-5 pe-5 fs-4 fw-semibold' variant="outline-success" >Download Course Details</Button>}
                 </Pdf>
             </div>
 
@@ -64,10 +64,6 @@ const Topic = () => {
                 </div>
             </div>
         </div >
-
-
-
-
     );
 };
 

@@ -8,7 +8,6 @@ const Courses = () => {
     const courses = useLoaderData();
     console.log(courses);
 
-
     return (
         <Container className='d-lg-flex bg-dark pb-5'>
 

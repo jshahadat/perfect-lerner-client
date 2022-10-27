@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Picture from '../../../assets/logo/home-logo.jpg'
 
 const Home = () => {
@@ -9,7 +10,7 @@ const Home = () => {
                 “The Road to Success is Always Under Construction”</h1>
             <Container className='d-lg-flex '>
                 <div className='col-lg-6 '>
-                    <img src={Picture} className='w-100' />
+                    <img src={Picture} alt="" className='w-100' />
                 </div>
                 <div className='col-lg-6'>
                     <h1 className='text-center text-white fw-bold '><span className='learn'>Learn</span> civil engineering</h1>
@@ -20,6 +21,8 @@ const Home = () => {
                         <li>With engineering programs online, you can register and learn more about civil engineering today.</li>
                     </ul>
 
+                    <Link to='/courses'>   <Button className='ms-5 mt-4 p-2 ps-5 pe-5 fs-4 fw-semibold color ' variant="success" >Contenue Course</Button>
+                    </Link>
                 </div>
 
             </Container>

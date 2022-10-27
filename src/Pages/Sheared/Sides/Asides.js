@@ -12,7 +12,6 @@ const Asides = () => {
     })
     return (
         <div>
-
             {
                 ctaegories.map(category => <p key={category.id} className='border border-light rounded-pill shadow-lg p-4 text-center fs-5 fw-bold '>
                     <Link to={`/category/${category.id}`} className='text-decoration-none'>{category.name}</Link>

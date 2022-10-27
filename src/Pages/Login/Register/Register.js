@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import LogOut from '../../../assets/logOut/logOut.webp'
 
 const Register = () => {
 
@@ -16,7 +17,6 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value
         const password = form.password.value;
-
 
         createUser(email, password)
             .then(result => {
@@ -35,7 +35,6 @@ const Register = () => {
 
     }
 
-
     const handleUpdateUserProfile = (name, photoURL) => {
         const profile = {
             displayName: name,
@@ -45,13 +44,9 @@ const Register = () => {
             .catch(error => console.error(error))
     }
 
-
     const handleAccepted = event => {
         setAccepted(event.target.checked)
     }
-
-
-
 
     return (
         <div className='bg-dark pb-5'>
@@ -109,8 +104,9 @@ const Register = () => {
                                         </div>
                                         <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                                                className="img-fluid" alt="Sample image" />
+                                            <img src={LogOut} alt="" className="img-fluid" />
+
+
 
                                         </div>
                                     </div>

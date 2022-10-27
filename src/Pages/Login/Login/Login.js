@@ -1,8 +1,9 @@
-import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import LogIn from '../../../assets/login/login.svg';
 
 const Login = () => {
 
@@ -10,9 +11,6 @@ const Login = () => {
     const { providerLogin, gitProvider, signIn, user } = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation()
-
-
-
 
     const from = location.state?.from?.pathname || '/';
 
@@ -29,8 +27,6 @@ const Login = () => {
             .catch(error => console.error(error))
     }
 
-
-
     const handleGitHubSignIn = () => {
         gitProvider(gitHubProvider)
             .then(result => {
@@ -39,7 +35,6 @@ const Login = () => {
 
             })
             .catch(error => console.error(error))
-
     }
 
     const handleSubmit = (event) => {
@@ -60,7 +55,6 @@ const Login = () => {
                 console.error(error)
                 setError(error.message);
             })
-
     }
 
     useEffect(() => {
@@ -69,70 +63,10 @@ const Login = () => {
         }
 
     }, [user, from, navigate])
-
-
-
-
     return (
-        // <div className='bg-gray'>
-        //     <section className="vh-100 bg-gray">
-        //         <div className="container py-5 h-100">
-        //             <div className="row d-flex align-items-center justify-content-center h-100">
-        //                 <div className="col-md-8 col-lg-7 col-xl-6">
-        //                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
-        //                         className="img-fluid" alt="Phone image" />
-        //                 </div>
-        //                 <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-
-        //                     <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign In</p>
-
-
-
-        //                     <Form onSubmit={handleSubmit}>
-        //                         <Form.Group className="mb-3 br-gray" controlId="formBasicEmail">
-        //                             <Form.Label>Email address</Form.Label>
-        //                             <Form.Control name="email" type="email" placeholder="Enter email" required />
-
-        //                         </Form.Group>
-
-        //                         <Form.Group className="mb-3" controlId="formBasicPassword">
-        //                             <Form.Label>Password</Form.Label>
-        //                             <Form.Control name="password" type="password" placeholder="Password" required />
-        //                         </Form.Group>
-
-        //                         <Button variant="primary" type="submit">
-        //                             Login
-        //                         </Button>
-        //                         <Form.Text className="text-danger">
-        //                             {error}
-        //                         </Form.Text>
-        //                     </Form>
-        //                     <p><small>New to this website? Please <Link to='/register'>Sign Up</Link></small></p>
-        //                     <div >
-        //                         <Button onClick={handleGoogleSignIn} variant="outline-primary" > Continue with Google</Button>
-        //                         <Button variant="outline-dark">Continue with Github</Button>
-
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     </section >
-
-        // </div >
-
-
-
-
-
-
-
-
-
-
 
         <div className='bg-dark'>
-
-            <section className="vh-100  bg-gray pb-5 mb-5" >
+            <section className="vh-100  bg-gray" >
                 <div className="container h-100 bg">
                     <div className="row d-flex justify-content-center align-items-center h-100">
                         <div className="col-lg-12 col-xl-11">
@@ -154,9 +88,6 @@ const Login = () => {
                                                     <Form.Label>Password</Form.Label>
                                                     <Form.Control name="password" type="password" placeholder="Password" required />
                                                 </Form.Group>
-
-
-
                                                 <Button variant="primary" type="submit">
                                                     Login
                                                 </Button>
@@ -165,20 +96,13 @@ const Login = () => {
                                                 </Form.Text>
                                                 <p><small>New to this website? Please <Link to='/register'>Sign Up</Link></small></p>
                                             </Form>
-
                                             <div >
                                                 <Button onClick={handleGoogleSignIn} variant="outline-primary" > Continue with Google</Button>
                                                 <Button onClick={handleGitHubSignIn} variant="outline-dark">Continue with Github</Button>
-
                                             </div>
                                         </div>
-
-
                                         <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
-                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
-                                                className="img-fluid" alt="Phone image" />
-
+                                            <img src={LogIn} alt="" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>
@@ -188,23 +112,6 @@ const Login = () => {
                 </div>
             </section>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     );

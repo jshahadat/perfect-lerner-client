@@ -11,8 +11,6 @@ import Category from '../../Pages/Category/Category'
 import Topic from "../../Pages/Sheared/Topic/Topic";
 import Faq from "../../Pages/Sheared/Faq/Faq"
 
-
-
 export const routes = createBrowserRouter([
     {
         path: '/',

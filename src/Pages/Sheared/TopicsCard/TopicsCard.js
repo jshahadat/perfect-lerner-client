@@ -10,7 +10,7 @@ const TopicsCard = ({ topics }) => {
 
     return (
 
-        <Card className="mb-5">
+        <Card className="mb-5 shadow-lg">
             <Card.Header className='d-flex justify-content-between align-items-center'>
                 <div className='d-flex'>
                     <Image
@@ -26,15 +26,17 @@ const TopicsCard = ({ topics }) => {
                 </div>
             </Card.Header>
             <Card.Body>
-                <Card.Title>{title}</Card.Title>
+                <Card.Title><h3>{title}</h3></Card.Title>
                 <Card.Img variant="top" src={image_url} />
                 <Card.Text>
-                    {
-                        details.length > 200 ?
-                            <>{details.slice(0, 200) + '...'} </>
-                            :
-                            details
-                    }
+                    <h6>
+                        {
+                            details.length > 200 ?
+                                <>{details.slice(0, 200) + '...'} </>
+                                :
+                                details
+                        }
+                    </h6>
                 </Card.Text>
                 <Link to={`/premium/${_id}`}> <Button variant="primary">Get premium access</Button></Link>
             </Card.Body>
