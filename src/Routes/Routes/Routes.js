@@ -9,6 +9,7 @@ import Register from "../../Pages/Login/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Category from '../../Pages/Category/Category'
 import Topic from "../../Pages/Sheared/Topic/Topic";
+import Faq from "../../Pages/Sheared/Faq/Faq"
 
 
 
@@ -35,9 +36,9 @@ export const routes = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
             },
             {
-                path: '/topic/:id',
+                path: '/premium/:id',
                 element: <PrivateRoute><Topic></Topic></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/topic/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/premium/${params.id}`)
 
             },
             {
@@ -48,6 +49,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/faq',
+                element: <Faq></Faq>
             },
             {
                 path: '/blog',

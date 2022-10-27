@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import Asides from '../Sides/Asides';
 import Card from 'react-bootstrap/Card';
 import Pdf from "react-to-pdf";
+import { Button } from 'react-bootstrap';
 
 const ref = React.createRef();
 
@@ -23,10 +24,10 @@ const Topic = () => {
 
     return (
 
-        <div>
+        <div >
             <div>
                 <Pdf targetRef={ref} filename="Course-Details.pdf" options={options}>
-                    {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+                    {({ toPdf }) => <Button onClick={toPdf} className='mb-4 p-2 ps-5 pe-5 fs-4 fw-semibold color ' variant="outline-success" >Download Course Details</Button>}
                 </Pdf>
             </div>
 

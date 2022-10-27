@@ -36,7 +36,7 @@ const TopicsCard = ({ topics }) => {
                             details
                     }
                 </Card.Text>
-                <Link to={`/topic/${_id}`}> <Button variant="primary">Get premium access</Button></Link>
+                <Link to={`/premium/${_id}`}> <Button variant="primary">Get premium access</Button></Link>
             </Card.Body>
         </Card>
 

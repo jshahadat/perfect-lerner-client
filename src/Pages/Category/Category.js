@@ -15,7 +15,7 @@ const Category = () => {
             <div className='col-lg-4'>
                 <Asides></Asides>
             </div>
-            <div className='col-lg-8 container'>
+            <div className='col-lg-8 container '>
                 <h2>This is Category has news: {coursesTopic.length}</h2>
                 {
                     coursesTopic.map(topics => <TopicsCard

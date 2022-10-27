@@ -2,8 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import app from '../../firebase/firebase.config'
 import './AuthProvider.css';
-import styled, { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme, GlobalStyles } from "../../Pages/Sheared/Theme/theme";
+
 
 
 
@@ -21,6 +20,10 @@ const AuthProvider = ({ children }) => {
 
     const providerLogin = (provider) => {
         setLoading(true);
+        return signInWithPopup(auth, provider);
+    }
+
+    const gitProvider = (provider) => {
         return signInWithPopup(auth, provider);
     }
 
@@ -61,7 +64,7 @@ const AuthProvider = ({ children }) => {
 
 
 
-    const authInfo = { theme, setTheme, user, loading, createUser, providerLogin, signIn, updateUserProfile, logOut }
+    const authInfo = { theme, setTheme, user, loading, createUser, providerLogin, gitProvider, signIn, updateUserProfile, logOut }
 
     return (
         <AuthContext.Provider value={authInfo}>

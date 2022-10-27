@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Header.css'
 import { Button, Container, Image } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
@@ -7,6 +7,7 @@ import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import LOGO from '../../../assets/logo/logo.png'
+import ReactSwitch from 'react-switch';
 
 
 
@@ -26,6 +27,25 @@ const Header = () => {
             .catch(error => console.error(error))
     }
 
+
+
+    const [theme, setTheme] = useState("light-theme");
+    const toggleTheme = () => {
+        if (theme === "dark-theme") {
+            setTheme("light-theme");
+        }
+        else {
+            setTheme("dark-theme")
+        }
+
+    };
+
+    useEffect(() => {
+        document.body.className = theme;
+
+    }, [theme])
+
+
     return (
         <Navbar collapseOnSelect className='mb-4 bg-secondary pt-4' expand="lg" bg="secondary" variant="light">
             <Container>
@@ -36,7 +56,7 @@ const Header = () => {
 
                             <img className='rounded mb-2' src={LOGO} alt="" style={{ height: '60px' }} />
                         </div>
-                        <h1 className='ms-3'><span className='perfect'>Perfect</span> <span className='learn'>Learn</span></h1>
+                        <h1 className='ms-3 me-5'><span className='perfect'>Perfect</span> <span className='learn'>Learn</span></h1>
                     </div>
 
                 </Link></Navbar.Brand>
@@ -44,7 +64,7 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
 
-                        <Link to='/courses' className='text-decoration-none ms-5 me-4 mb-4 fs-4 fw-semibold color'>Courses</Link>
+                        <Link to='/courses' className='text-decoration-none me-4 mb-4 fs-4 fw-semibold color'>Courses</Link>
                         <Link to='/faq' className='text-decoration-none me-4 mb-4 fs-4 fw-semibold color'>FAQ</Link>
                         <Link to='/blog' className='text-decoration-none fs-4 fw-semibold color mb-4'>Blog</Link>
 
@@ -55,7 +75,7 @@ const Header = () => {
                         <Link to="/">
                             {user?.photoURL ?
                                 <Image
-                                    className='me-5'
+                                    className='me-5 mb-4'
                                     title={user?.displayName}
                                     style={{ height: '40px' }}
                                     roundedCircle
@@ -69,7 +89,7 @@ const Header = () => {
                             {
                                 user?.uid ?
                                     <>
-                                        <span className='me-4 mb-4'><Button onClick={handleLogOut} variant="light">Log out</Button></span>
+                                        <span className=' me-4 mb-4'><Button onClick={handleLogOut} variant="light">Log out</Button></span>
                                     </>
                                     :
                                     <>
@@ -82,6 +102,9 @@ const Header = () => {
 
                         </>
                     </Nav>
+                    <div className='mb-3'>
+                        <ReactSwitch onClick={toggleTheme}></ReactSwitch>
+                    </div>
 
                 </Navbar.Collapse>
             </Container>
